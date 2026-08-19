@@ -1,21 +1,34 @@
 import tabulate
 import colorama
-import random
-
+import random as ram
+import time
 
 def ingresar_equipos():
+    equipos = []
+    palabras = ["primer", "segundo", "tercero", "cuarto"]
     print("\n==> TORNEO DE FÙTBOL <==")
     print("\nIngrese el nombre de los equipos que participan")
-    eq_1 = input("Ingrese el nombre del primer equipo: ")
+
+    for i in range(4):
+        eq = input(f"Ingrese el nombre del {palabras[i]} equipo: ")
+        while eq in equipos:        
+            print("===            ‼️ERROR‼️            ===")
+            print("Ya has ingresado a ese equipo antes...")
+            eq = input("Vuelva a ingresar al eqipo (uno que no hayas puesto antes): ")
+        
+        equipos.append(eq)    
     
-    eq_2 = input("Ingrese el nombre del segundo equipo: ")
-    while eq_2 == eq_1:
-        print("ERROR, Haz puesto el mismo nombre")
-        eq_2 = input("Ingrese nuevamente el nombre del segundo equipo: ")
+    return equipos
 
-    eq_3 = input("Ingrese el nombre del tercer equipo: ")
-    while eq_3 == eq_1 or eq_3 == eq_2:
-        print("ERROR, Haz puesto el mismo nombre")
-        eq_3 = input("Ingrese nuevamente el nombre del tercer equipo: ")
-
-    eq_4 = input("Ingrese el nombre del cuarto equipo: ")
+def simular_partidos(equipos):
+    print("=== PRIMER PARTIDO ===")
+    print(f"Se enfrentarán {equipos[0]} contra {equipos[1]}")
+    time.sleep(0.3)
+    print("⌚¡ARRANCÓ EL PARTIDOOO!")
+    time.sleep(0.5)
+    print("FINALIZÓ EL PARTIDOOO")
+    gol_1 = ram.randint(0, 5)
+    gol_2 = ram.randint(0, 5)
+    time.sleep(0.2)
+    print("RESULTADO")
+    print(f"{equipos[0]}: {gol_1} - {gol_2} :{equipos[1]}")
