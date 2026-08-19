@@ -40,6 +40,11 @@ def simular_partidos(equipos):
     print(f"{equipos[0]}: {gol_1} - {gol_2} :{equipos[1]}")
 
 def armar_fixture(equipos):
-    for i in range(12):
-        ram.choice(equipos)
-        fixture = {}
+    fixture =  {"Fecha 1": [(equipos[0], equipos[1]), (equipos[3], equipos[2])],
+                    "Fecha 2": [(equipos[2], equipos[0]), (equipos[1], equipos[3])],
+                    "Fecha 3": [(equipos[0], equipos[3]), (equipos[2], equipos[1])],
+                    "Fecha 4": [(equipos[1], equipos[0]), (equipos[3], equipos[2])],
+                    "Fecha 5": [(equipos[0], equipos[2]), (equipos[3], equipos[1])],
+                    "Fecha 6": [(equipos[0], equipos[3]), (equipos[1], equipos[2])]
+        }
+    return fixture
