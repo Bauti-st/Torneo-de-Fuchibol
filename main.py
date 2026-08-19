@@ -38,3 +38,6 @@ def simular_partidos(equipos):
     print("----->             RESULTADO            <-----")
     time.sleep(0.1)
     print(f"{equipos[0]}: {gol_1} - {gol_2} :{equipos[1]}")
+
+def armar_fixture(equipos):
+    
