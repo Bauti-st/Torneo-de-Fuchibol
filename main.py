@@ -40,4 +40,6 @@ def simular_partidos(equipos):
     print(f"{equipos[0]}: {gol_1} - {gol_2} :{equipos[1]}")
 
 def armar_fixture(equipos):
-    
+    for i in range(12):
+        ram.choice(equipos)
+        fixture = {}
