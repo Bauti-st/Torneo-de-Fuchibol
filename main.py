@@ -16,7 +16,7 @@ def ingresar_equipos():
             print("Ya has ingresado a ese equipo antes...")
             eq = input("Vuelva a ingresar al eqipo (uno que no hayas puesto antes): ")
         
-        equipos.append(eq)    
+        equipos[eq] = {"Goles a favor":0, "Ganados":0, "Empatados":0, "Perdidos":0, "Puntos":0}
     
     return equipos
 
@@ -30,5 +30,11 @@ def simular_partidos(equipos):
     gol_1 = ram.randint(0, 5)
     gol_2 = ram.randint(0, 5)
     time.sleep(0.2)
-    print("RESULTADO")
+    if gol_1 > gol_2:
+        print("GANOOOO", {equipos[0]})
+    else:
+        print("GANOOOO", {equipos[1]})
+    time.sleep(0.2)
+    print("----->             RESULTADO            <-----")
+    time.sleep(0.1)
     print(f"{equipos[0]}: {gol_1} - {gol_2} :{equipos[1]}")
