@@ -21,23 +21,8 @@ def ingresar_equipos():
     return equipos
 
 def simular_partidos(equipos):
-    print("=== PRIMER PARTIDO ===")
-    print(f"Se enfrentarán {equipos[0]} contra {equipos[1]}")
-    time.sleep(0.3)
-    print("⌚¡ARRANCÓ EL PARTIDOOO!")
-    time.sleep(0.5)
-    print("FINALIZÓ EL PARTIDOOO")
-    gol_1 = ram.randint(0, 5)
-    gol_2 = ram.randint(0, 5)
-    time.sleep(0.2)
-    if gol_1 > gol_2:
-        print("GANOOOO", {equipos[0]})
-    else:
-        print("GANOOOO", {equipos[1]})
-    time.sleep(0.2)
-    print("----->             RESULTADO            <-----")
-    time.sleep(0.1)
-    print(f"{equipos[0]}: {gol_1} - {gol_2} :{equipos[1]}")
+    #hacer la simulaciòn de los partidos
+    pass
 
 def armar_fixture(equipos):
     fixture =  {"Fecha 1": [(equipos[0], equipos[1]), (equipos[3], equipos[2])],
@@ -47,4 +32,5 @@ def armar_fixture(equipos):
                     "Fecha 5": [(equipos[0], equipos[2]), (equipos[3], equipos[1])],
                     "Fecha 6": [(equipos[0], equipos[3]), (equipos[1], equipos[2])]
         }
+    
     return fixture
